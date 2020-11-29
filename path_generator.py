@@ -7,10 +7,13 @@ def in_square(tile):
     return True
 
 def paths(prevpath):
-    #globals()['pathsgenerated'].append(prevpath)
     for i in prevpath:
         f.write(f'{i[0]},{i[1]};')
     f.write('\n')
+
+    if len(prevpath) > 8:
+        return
+
     for arr in ((-1,-1),(-1,0),(-1,1),(0,-1),(0,1),(1,-1),(1,0),(1,1)):
         newtile = [prevpath[-1][0] + arr[0], prevpath[-1][1] + arr[1]]
         if (newtile not in prevpath) and in_square(newtile):
@@ -18,3 +21,5 @@ def paths(prevpath):
 
 for (i, j) in zip([0,1,2,3], [0,1,2,3]):
     paths([[i,j]])
+
+f.close()
