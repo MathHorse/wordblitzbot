@@ -19,7 +19,8 @@ def paths(prevpath):
         if (newtile not in prevpath) and in_square(newtile):
             paths(prevpath + [newtile])
 
-for (i, j) in zip([0,1,2,3], [0,1,2,3]):
-    paths([[i,j]])
+for i in [0,1,2,3]:
+    for j in [0,1,2,3]:
+        paths([[i, j]])
 
 f.close()
