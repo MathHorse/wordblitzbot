@@ -2,6 +2,10 @@ from pynput.mouse import Button, Controller
 import time
 from pynput import keyboard
 import os
+
+f = open("letters.txt", "w", encoding = 'utf-8')
+a = input("> ")
+
 mouse = Controller()
 
 def on_press(key):
@@ -13,6 +17,28 @@ listener = keyboard.Listener(
 listener.start()
 
 paths = [[y.split(',') for y in x.split(';')[:-1]] for x in open('paths.txt', 'r').readlines()[:-1]]
+
+#input.py
+f.write(
+    a[0] + "," +
+    a[1] + "," +
+    a[2] + "," +
+    a[3] + ";" +
+    a[4] + "," +
+    a[5] + "," +
+    a[6] + "," +
+    a[7] + ";" +
+    a[8] + "," +
+    a[9] + "," +
+    a[10] + "," +
+    a[11] + ";" +
+    a[12] + "," +
+    a[13] + "," +
+    a[14] + "," +
+    a[15]
+    )
+f.close()
+
 letters = [x.split(',') for x in open('letters.txt', 'r', encoding = 'utf-8').read().split(';')]
 words = set([x.strip('\n') for x in open('magyar_szavak.txt', 'r', encoding = 'utf-8').readlines()])
 mouse_coords = [[int(y) for y in x.split(',')] for x in open('mousepos.txt', 'r').read().split(';')[:-1]]
