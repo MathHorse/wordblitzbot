@@ -21,6 +21,7 @@ def paths(prevpath):
 
 for i in [0,1,2,3]:
     for j in [0,1,2,3]:
+        print(f'{i} {j}')
         paths([[i, j]])
 
 f.close()
