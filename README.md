@@ -11,6 +11,7 @@ WordBlitzBot is an open-source bot for playing Facebook's WorldBlitz game, entir
 **Wordlist**: You can import your own language's worldlist by replacing the main.py's CONFIG variable's "wordlist" element with the path to your worldlist.
 
 **Tile order**: The recommended tile order is
+
 1 2 3 4
 
 5 6 7 8
