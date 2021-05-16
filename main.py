@@ -1,7 +1,7 @@
 from pynput.mouse import Button, Controller
 import time
 from pynput import keyboard
-import os
+import os, ftplib
 
 CONFIG = {'wordlist' : 'magyar_szavak.txt'}
 
